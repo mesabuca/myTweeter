@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :tweets
   resources :tweets
   resources :tweets
-  root to: 'tweets#index'
+  root to: 'welcome#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
