@@ -8,11 +8,19 @@
 </head>
 <body>
 
-<ul>
-	<li class="navbar_buttons" ><%= link_to 'New Tweet', new_tweet_path %></li>
-	<li class="navbar_buttons">asdasd</li>
-	<li class="navbar_buttons">asdasdasd</li>
-</ul>
+	<% if user_signed_in? %>
+		<ul>
+			<li class="navbar_buttons" ><%= link_to 'New Tweet', new_tweet_path %></li>
+			<li class="navbar_buttons"><%= link_to 'User settings', edit_user_registration_path %></li>
+			<li class="navbar_buttons"><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>
+		</ul>
+	<% else %>
+		<ul>
+			<li class="navbar_buttons" ><%= link_to 'New Tweet', new_tweet_path %></li>
+			<li class="navbar_buttons"><%= link_to 'User settings', edit_user_registration_path %></li>
+			<li class="navbar_buttons"><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>
+		</ul>
+	<% end %>
 
 <%flash[:alert] = "Successfully Logged in..."%>
  
