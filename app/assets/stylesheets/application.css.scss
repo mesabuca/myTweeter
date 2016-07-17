@@ -17,6 +17,12 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+
+body {
+  background-image: url('bg.jpg');
+  background-size: cover;
+}
+
 #logo {
 	font-size: 30px;
 	font-weight: 700;
@@ -31,6 +37,7 @@
 	#content {
 		float:none;
 	}
+
 	padding: 2em 1em;
 	border-bottom: 1px solid #E9E9E9;
 	.title {
