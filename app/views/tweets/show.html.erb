@@ -10,3 +10,16 @@
 	<%= link_to 'Destroy', @tweet, method: :delete, data: { confirm: "Are you sure?" }, class:"btn btn-danger" %>
 <% end %>
 	<%= link_to 'Back', tweets_path, class:"btn btn-default" %>
+
+	<div class="btn-group pull-right">
+  <%= link_to like_tweet_path(@tweet), method: :put, class: "btn btn-default btn-sm" do %>
+    <span class="glyphicon glyphicon-thumbs-up"></span>
+    Like
+    <%= @tweet.get_upvotes.size %>
+  <% end %>
+  <%= link_to dislike_tweet_path(@tweet), method: :put, class: "btn btn-default btn-sm" do %>
+    <span class="glyphicon glyphicon-thumbs-down">
+    Dislike
+    <%= @tweet.get_downvotes.size %>
+  <% end %>
+</div>

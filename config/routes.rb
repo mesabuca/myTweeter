@@ -2,9 +2,15 @@ Rails.application.routes.draw do
   get 'welcome/index'
 
   devise_for :users
-  resources :tweets
-  resources :tweets
-  resources :tweets
+  resources :tweets do
+    member do
+      put "like", to: "tweets#upvote"
+      put "dislike", to: "tweets#downvote"
+    end
+  end
+
+
+
   root to: 'welcome#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
