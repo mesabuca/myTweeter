@@ -16,12 +16,19 @@
         Like
         <%= tweet.get_upvotes.size %>
       <% end %>
+      
       <%= link_to dislike_tweet_path(tweet), method: :put, class: "btn btn-default btn-sm" do %>
         <span class="glyphicon glyphicon-thumbs-down">
         Dislike
         <%= tweet.get_downvotes.size %>
       <% end %>
-	</div>
+      
+      <%= link_to tweet, class: "btn btn-default btn-sm" do %>
+        <span class="glyphicon glyphicon-thumbs-down">
+        Comments <%= tweet.comments.count %>      
+          
+      <% end %>
+    </div>
 
   </div>
 <%end%>
