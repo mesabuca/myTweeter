@@ -1,9 +1,7 @@
-
-
-  <div class = "well well nm">
+<div class = "well well nm">
     
     <div class="page-header">
-      <h3><%= @tweet.text %><br/> <small>Tweeted by <%= @tweet.user.email %></small></h3>
+      <h3><%= @user.email %><br/> <small>Tweeted by <%= @tweet.user.email %></small></h3>
     </div>
 
     <% if @tweet.user == current_user %>
