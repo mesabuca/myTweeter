@@ -30,9 +30,21 @@
         <%= link_to tweet, class: "btn btn-default btn-sm" do %>
           <span class="glyphicon glyphicon-pencil">
           Comments <%= tweet.comments.count %>      
-            
         <% end %>
+
+          <button type="button" class="btn btn-default btn-sm" data-toggle="collapse" href="#comment<%=tweet.id.to_s%>"><span class="glyphicon glyphicon-pencil"> Comments <%= tweet.comments.count %></button>
+
+            
       </div>
+            <div id="comment<%=tweet.id.to_s%>" class="collapse<% tweet.id %>">
+              <%= simple_form_for [tweet, Comment.new]  do |f| %>
+                <div class="field">
+                  <%= f.text_area :body, class: "form-control" %>
+                </div>
+                <br>
+                <%= f.submit "Add Comment", class: "btn btn-primary" %>
+              <% end %>
+            </div>
 
     </div>
   </div>
